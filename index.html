@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message For You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div id="container">
+        <div id="envelope-wrapper">
+            <div class="envelope" onclick="openEnvelope()">
+                <div class="flap"></div>
+                <div class="letter">
+                    <p>Click to Open ❤️</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="proposal-content" class="hidden">
+            <h1 id="question">Will you be my Valentine?</h1>
+            <div class="gif-container">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYyYm9uOHp5eGZqZnd4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JnBvcz1jJmxlPTU/c7kaO8L21N0E7mYlY9/giphy.gif" alt="Cute gif">
+            </div>
+            
+            <div class="btn-group">
+                <button id="yes-btn" onclick="sayYes()">YES! ❤️</button>
+                <button id="no-btn">No 💔</button>
+            </div>
+        </div>
+
+        <div id="success-message" class="hidden">
+            <h1 class="dancing-script">Yay! I love you! ❤️</h1>
+            <p>See you on February 14th!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
