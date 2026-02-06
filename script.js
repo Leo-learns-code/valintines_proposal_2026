@@ -4,14 +4,42 @@ function openEnvelope() {
 }
 
 const noBtn = document.getElementById('no-btn');
+const mainGif = document.getElementById('main-gif');
+let noClickCount = 0;
 
-// Make the "No" button run away
-noBtn.addEventListener('mouseover', () => {
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-    
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
+noBtn.addEventListener('click', () => {
+    noClickCount++;
+
+    if (noClickCount === 1) {
+        // First press: Show the first angry gif
+        mainGif.src = ""; // Reset to force animation replay
+        setTimeout(() => {
+            mainGif.src = "angry.gif";
+        }, 50);
+        
+    } else if (noClickCount === 2) {
+        // Second press: Show the NEW angry_dog gif
+        mainGif.src = ""; 
+        setTimeout(() => {
+            mainGif.src = "angry_dog.gif";
+        }, 50);
+    } else if (noClickCount === 3) {
+        // Fourth press: Show the second angry gif
+        mainGif.src = "";
+        setTimeout(() => {
+            mainGif.src = "angry_dog.gif";
+        }, 50);
+        question.innerText = "I'm gonna back shot you ";
+        
+    } else {
+        // Third press: Hide the No button and bring back the cute dog
+        noBtn.classList.add('hidden');
+        
+        mainGif.src = "";
+        setTimeout(() => {
+            mainGif.src = "dance_dog.gif";
+        }, 50);
+    }
 });
 
 function sayYes() {

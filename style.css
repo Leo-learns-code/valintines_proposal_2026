@@ -74,3 +74,12 @@ button {
 
 #yes-btn { background-color: var(--primary-red); color: white; box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4); }
 #no-btn { background-color: #ccc; color: white; position: absolute; }
+
+/* In style.css */
+#no-btn {
+    background-color: #ccc;
+    color: white;
+    /* Changed from absolute to relative or removed entirely */
+    position: relative; 
+    margin-left: 10px; /* Add some space between buttons */
+}
